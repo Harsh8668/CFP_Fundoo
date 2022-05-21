@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="head">
+        <span class="textsty" style="color:#4169e1">F</span>
+        <span class="textsty" style="color:#b22222">u</span>
+        <span class="textsty" style="color: #ff8c00">n</span>
+        <span class="textsty" style="color: #4285f4">d</span>
+        <span class="textsty" style="color: #34a853">o</span>
+        <span class="textsty" style="color: #ea4335">o</span>
+    </div>
+
+    <div class="sign-in">
+        <p>Find your email</p>
+    </div>
+
+    <div class="text">
+        <p>Enter your phone number or recovery email</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="email">
+            <p>
+                <mat-form-field appearance="outline" style="width: 350px;">
+                    <mat-label>Phone number or email</mat-label>
+                    <input matInput placeholder="" formControlName="email" />
+                    <mat-error>Enter the email</mat-error>
+                </mat-form-field>
+            </p>
+        </div>
+
+        <div class="next-button">
+            <section style="margin-top:-30px">
+                <button mat-flat-button color="primary">
+                    <a href="" style="text-decoration: none;color:#fff">Next</a>
+                </button>
+            </section>
+        </div>
+
+    </form>
+
+</div>

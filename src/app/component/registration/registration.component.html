@@ -1,0 +1,115 @@
+<div class="container">
+    <div class="head">
+        <span class="textsty" style="color:#4169e1">F</span>
+        <span class="textsty" style="color:#b22222">u</span>
+        <span class="textsty" style="color: #ff8c00">n</span>
+        <span class="textsty" style="color: #4285f4">d</span>
+        <span class="textsty" style="color: #34a853">o</span>
+        <span class="textsty" style="color: #ea4335">o</span>
+    </div>
+
+    <div class="head2">
+        <p>Create your Fundoo account</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="left-container">
+            <div class="f-name">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>First name</mat-label>
+                        <input matInput placeholder="" formControlName="firstName" />
+                        <mat-error>Enter the firstname</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="l-name">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last name</mat-label>
+                        <input matInput placeholder="" formControlName="lastName" />
+                        <mat-error>Enter the lastname</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="u-name">
+                <p>
+                    <mat-form-field appearance="outline" style="width: 410px;">
+                        <mat-label>Username</mat-label>
+                        <input matInput placeholder="" formControlName="email" />
+                        <mat-error>Enter the username</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="message">
+                <p>You can use letters, numbers & periods</p>
+            </div>
+
+            <div class="message1">
+                <a style="text-decoration:none;" href="">Use my current email address instead</a>
+            </div>
+
+            <div class="password">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="" formControlName="password" />
+                        <mat-error>Enter the password</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="c-password">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput placeholder="" formControlName="confirmPassword" />
+                        <mat-error>Re-enter the password</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="message2">
+                <p>Use 8 or more characters with a mix of letters, numbers & <br> symbols</p>
+            </div>
+
+            <div class="check">
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Show password</mat-checkbox>
+                </section>
+            </div>
+
+            <div class="message3">
+                <a href="" style="text-decoration: none;">Sign in instead</a>
+            </div>
+
+            <div class="button" style="margin-top: -35px;">
+                <section>
+                    <button mat-flat-button color="primary">
+                        <a href="" style="text-decoration:none;color:#fff;">Next</a>
+                    </button>
+                </section>
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="right-container">
+        <div class="image">
+            <img src="../../../assets/registration/account.svg">
+        </div>
+
+        <div class="message4">
+            <p>One Account. All of Fundoo</p>
+        </div>
+
+        <div class="message5">
+            working for you
+        </div>
+    </div>
+</div>

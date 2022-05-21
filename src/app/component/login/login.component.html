@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="head">
+        <span class="textsty" style="color:#4169e1">F</span>
+        <span class="textsty" style="color:#b22222">u</span>
+        <span class="textsty" style="color: #ff8c00">n</span>
+        <span class="textsty" style="color: #4285f4">d</span>
+        <span class="textsty" style="color: #34a853">o</span>
+        <span class="textsty" style="color: #ea4335">o</span>
+    </div>
+
+    <div class="sign-in">
+        <p>Login</p>
+    </div>
+
+    <div class="text">
+        <p>Use for Fundoo accout</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="email">
+            <p>
+                <mat-form-field appearance="outline" style="width: 380px;">
+                    <mat-label>Email or phone</mat-label>
+                    <input matInput placeholder="" formControlName="email" />
+                    <mat-error>Enter the email</mat-error>
+                </mat-form-field>
+            </p>
+        </div>
+
+        <div class="text1">
+            <a href="" style="text-decoration:none;">Forgot email</a>
+        </div>
+
+        <div class="text2">
+            <p>Not your computer? User Guest mode to sign in privately</p>
+        </div>
+
+        <div class="text3">
+            <a href="" style="text-decoration:none;">Learn more</a>
+        </div>
+
+        <div class="text4">
+            <a href="" style="text-decoration: none;">Create account</a>
+        </div>
+
+        <div class="next-button">
+            <section slot="margin-top:-30px;">
+                <button mat-flat-button color="primary">
+                    <a href="" style="text-decoration: none; color:#fff">Next</a>
+                </button>
+            </section>
+        </div>
+
+    </form>
+
+</div>
