@@ -27,9 +27,19 @@
                 </mat-form-field>
             </p>
         </div>
-
+    
         <div class="text1">
             <a href="" style="text-decoration:none;">Forgot email</a>
+        </div>
+
+        <div class="password">
+            <p>
+                <mat-form-field appearance="outline" style="width: 380px;">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="" formControlName="password" />
+                    <mat-error>Enter the password</mat-error>
+                </mat-form-field>
+            </p>
         </div>
 
         <div class="text2">
@@ -45,9 +55,9 @@
         </div>
 
         <div class="next-button">
-            <section slot="margin-top:-30px;">
+            <section style="margin-top:-30px;">
                 <button mat-flat-button color="primary">
-                    <a href="" style="text-decoration: none; color:#fff">Next</a>
+                    <a style="text-decoration: none; color:#fff">Next</a>
                 </button>
             </section>
         </div>
