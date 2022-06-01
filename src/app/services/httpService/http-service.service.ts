@@ -10,19 +10,19 @@ export class HttpServiceService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postService(url: string, reqdata: any, token: boolean = false, httpOptions: any = {}) {
+  postService(url: string, reqdata: any, token: boolean = true, httpOptions: any = {}) {
     return this.httpClient.post(this.baseurl + url, reqdata, token && httpOptions)
   }
 
-  getService() {
-
+  getService(url: string, token: boolean = true, httpOptions: any = {}) {
+    return this.httpClient.get(this.baseurl + url, token && httpOptions)
   }
 
   deleteService() {
 
   }
 
-  patchService() {
+  patchService() {  
 
   }
 

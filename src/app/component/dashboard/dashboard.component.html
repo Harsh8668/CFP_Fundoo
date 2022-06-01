@@ -1,0 +1,95 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<div class="example-container">
+    <mat-toolbar class="example-toolbar">
+        <button style="top: -5px;" mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <div class="image">
+        <img src="../../../assets/dashboard/Fundoo_logo.png">
+    </div>
+
+    <div class="text">
+        <p>Fundoo</p>
+    </div>
+
+    <div class="search" style="margin-top: -50px;">
+        <input type="search" class="site-search" placeholder="Search" style="cursor:auto;">
+    </div>
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <router-outlet></router-outlet>
+        
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches">
+            
+            <mat-nav-list>
+                
+                <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
+                    <span class="material-symbols-outlined">
+                        lightbulb
+                    </span>
+                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 15px;">Notes</p>
+                </a>
+
+                <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 10px;">Remainders</p>
+                </a>
+                
+                <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 10px;">Edit labels</p>
+                </a>
+                
+                <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
+                    <span class="material-symbols-outlined">
+                        archive
+                    </span>
+                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 10px;">Archive</p>
+                </a>
+                
+                <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                    <p *ngIf="isValid" style="font-size: 20px ;padding: 45px;margin-top: 10px;">Trash</p>
+                </a>
+            
+            </mat-nav-list>
+
+        </mat-sidenav>
+    </mat-sidenav-container>
+
+</div>
+<div class="button2">
+    <div role="button" class="refresh">
+        <span class="material-symbols-outlined" style="cursor:pointer;">
+            refresh
+        </span>
+    </div>
+
+    <div role="button" class="grid">
+        <span class="material-symbols-outlined" style="cursor:pointer;">
+            grid_view
+        </span>
+    </div>
+
+    <div role="button" class="setting">
+        <span class="material-symbols-outlined" style="cursor:pointer;">
+            settings
+        </span>
+    </div>
+
+    <div role="button" class="apps">
+        <span class="material-symbols-outlined" style="cursor:pointer;">
+            apps
+        </span>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div *ngFor="let note of NoteArray">
+    <mat-card class="card">
+        <mat-card-title type="text" placeholder="Title" class="input">{{note.title}}</mat-card-title>
+        <mat-card-content type="text" placholder="Take a note..." class="input">{{note.description}}</mat-card-content>
+        <div class="icon">
+            <app-icons [noteCard]="note"></app-icons>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,49 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+<div class="container">
+    <div class="box1">
+        <input class="box2" type="text" placeholder="Take a note..." *ngIf="isValid" (click)="show();">
+
+        <div class="checkBox">
+            <span class="material-symbols-outlined">
+                check_box
+            </span>
+        </div>
+
+        <div class="edit">
+            <span class="material-symbols-outlined">
+                brush
+            </span>
+        </div>
+
+        <div class="image">
+            <span class="material-symbols-outlined">
+                image
+            </span>
+        </div>
+    </div>
+
+    <div class="box3">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="box4" *ngIf="!isValid">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle style="background-color: whitesmoke;">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <input type="text" class="box5" placeholder="Title" formControlName="title">
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <input type="text" class="box6" placeholder="Take a note..." formControlName="description"><br><br>
+                        <button (click)="onSubmit()" class="close">
+                            Close
+                        </button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </form>
+    </div>
+</div>
