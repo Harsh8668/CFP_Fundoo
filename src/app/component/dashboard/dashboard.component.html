@@ -31,7 +31,7 @@
                     <span class="material-symbols-outlined">
                         lightbulb
                     </span>
-                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 15px;">Notes</p>
+                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 15px;" routerLink="notes">Notes</p>
                 </a>
 
                 <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
@@ -52,14 +52,14 @@
                     <span class="material-symbols-outlined">
                         archive
                     </span>
-                    <p *ngIf="isValid" style="font-size:  20px ;padding: 45px;margin-top: 10px;">Archive</p>
+                    <p *ngIf="isValid" style="font-size: 20px ;padding: 45px;margin-top: 10px;"routerLink="archive" >Archive</p>
                 </a>
                 
                 <a (click)="show();" mat-list-item style="border-radius:0px 25px 25px 0px;width: 270px;">
                     <span class="material-symbols-outlined">
                         delete
                     </span>
-                    <p *ngIf="isValid" style="font-size: 20px ;padding: 45px;margin-top: 10px;">Trash</p>
+                    <p  *ngIf="isValid" style="font-size: 20px ;padding: 45px;margin-top: 10px;" routerLink="trash">Trash</p>
                 </a>
             
             </mat-nav-list>
@@ -90,6 +90,12 @@
     <div role="button" class="apps">
         <span class="material-symbols-outlined" style="cursor:pointer;">
             apps
+        </span>
+    </div>
+
+    <div role="button" class="profile">
+        <span class="material-symbols-outlined" style="cursor:pointer;">
+            account_circle
         </span>
     </div>
 </div>

@@ -27,6 +27,8 @@ import { DisplayNotesComponent } from './component/display-notes/display-notes.c
 import { IconsComponent } from './component/icons/icons.component';
 import { GetAllNotesComponent } from './component/get-all-notes/get-all-notes.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { GetArchiveComponent } from './component/get-archive/get-archive.component';
+import { GetTrashComponent } from './component/get-trash/get-trash.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {MatMenuModule} from '@angular/material/menu';
     CreateNotesComponent,
     DisplayNotesComponent,
     IconsComponent,
-    GetAllNotesComponent
+    GetAllNotesComponent,
+    GetArchiveComponent,
+    GetTrashComponent
   ],
   imports: [
     BrowserModule,

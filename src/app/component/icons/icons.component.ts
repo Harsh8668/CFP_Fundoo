@@ -13,7 +13,6 @@ export class IconsComponent implements OnInit {
   constructor(private note: NoteServiceService) { }
 
   ngOnInit(): void {
-    console.log(this.noteCard);
   }
 
   delete() {

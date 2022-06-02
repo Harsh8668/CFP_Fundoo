@@ -6,6 +6,8 @@ import { DisplayNotesComponent } from './component/display-notes/display-notes.c
 import { ForgotemailComponent } from './component/forgotemail/forgotemail.component';
 import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
 import { GetAllNotesComponent } from './component/get-all-notes/get-all-notes.component';
+import { GetArchiveComponent } from './component/get-archive/get-archive.component';
+import { GetTrashComponent } from './component/get-trash/get-trash.component';
 import { IconsComponent } from './component/icons/icons.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
@@ -19,8 +21,9 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
-      { path: '', redirectTo: 'dashboard/notes', pathMatch: 'full' },
-      {path:'notes', component:GetAllNotesComponent}
+      {path:'notes', component:GetAllNotesComponent},
+      {path:'archive', component:GetArchiveComponent},
+      {path:'trash', component:GetTrashComponent},    
     ]
   }
 ];
