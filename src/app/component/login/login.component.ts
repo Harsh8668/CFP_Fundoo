@@ -10,6 +10,7 @@ import { UserServiceService } from 'src/app/services/userService/user-service.se
 export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
+  users = '1'
 
   constructor(private formBuilder: FormBuilder, private user: UserServiceService) { }
 
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: "advance"
     });
+    localStorage.setItem('SessionUser',this.users);
   }
 
   get f() { return this.registerForm.controls; }

@@ -37,10 +37,14 @@
                                 <input type="text" class="box5" placeholder="Title" formControlName="title">
                             </mat-panel-title>
                         </mat-expansion-panel-header>
-                        <input type="text" class="box6" placeholder="Take a note..." formControlName="description"><br><br>
+                        <input type="text" class="box6" placeholder="Take a note..."
+                            formControlName="description"><br><br>
                         <button (click)="onSubmit()" class="close">
                             Close
                         </button>
+                        <div class="icon">
+                            <app-icons></app-icons>
+                        </div>
                     </mat-expansion-panel>
                 </mat-accordion>
             </div>

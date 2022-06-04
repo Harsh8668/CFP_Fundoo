@@ -28,4 +28,9 @@ export class DashboardComponent implements OnDestroy {
   show() {
     this.isValid = true
   }
+
+  logout(){
+    console.log("Successfully Logout");
+    localStorage.removeItem('token');
+  }
 }

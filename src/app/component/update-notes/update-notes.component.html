@@ -1,0 +1,17 @@
+<div class="main">
+    <mat-card class="card">
+        <div class="text1" >
+            <input matInput [(ngModel)]="title" placeholder="Title" type="text" style="width:300px;font-size: 15px;">
+        </div>
+        <br>
+        <div class="text2">
+            <input matInput [(ngModel)]="description" placeholder="Take a note..." type="text" style="width:300px;font-size: 15px;">
+        </div>
+        <div class="icons">
+            <app-icons></app-icons>
+        </div>
+        <div class="button">
+            <button mat-button mat-dialog-close (click)="closed()">Close</button>
+        </div>
+    </mat-card>
+</div>

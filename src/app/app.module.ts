@@ -17,18 +17,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatSelectModule} from '@angular/material/select';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatListModule} from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
 import { CreateNotesComponent } from './component/create-notes/create-notes.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { DisplayNotesComponent } from './component/display-notes/display-notes.component';
 import { IconsComponent } from './component/icons/icons.component';
 import { GetAllNotesComponent } from './component/get-all-notes/get-all-notes.component';
-import {MatMenuModule} from '@angular/material/menu';
 import { GetArchiveComponent } from './component/get-archive/get-archive.component';
 import { GetTrashComponent } from './component/get-trash/get-trash.component';
+import { UpdateNotesComponent } from './component/update-notes/update-notes.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { AuthguardserviceService } from './services/AuthGuardService/authguardservice.service';
+import { RouterModule } from '@angular/router'; 
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,8 @@ import { GetTrashComponent } from './component/get-trash/get-trash.component';
     IconsComponent,
     GetAllNotesComponent,
     GetArchiveComponent,
-    GetTrashComponent
+    GetTrashComponent,
+    UpdateNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +57,7 @@ import { GetTrashComponent } from './component/get-trash/get-trash.component';
     BrowserAnimationsModule,
     MatInputModule,
     MatCheckboxModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
@@ -63,9 +70,13 @@ import { GetTrashComponent } from './component/get-trash/get-trash.component';
     MatExpansionModule,
     MatCardModule,
     FlexLayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FormsModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    AuthguardserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

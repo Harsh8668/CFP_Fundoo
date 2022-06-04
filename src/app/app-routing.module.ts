@@ -11,21 +11,29 @@ import { GetTrashComponent } from './component/get-trash/get-trash.component';
 import { IconsComponent } from './component/icons/icons.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
+  // {path:'', redirectTo:"login", pathMatch: 'full'},
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgotemail', component: ForgotemailComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
-  {path:'display', component: DisplayNotesComponent},
+  { path: 'display', component: DisplayNotesComponent },
   {
-    path: 'dashboard', component: DashboardComponent,
+    path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard],
     children: [
-      {path:'notes', component:GetAllNotesComponent},
-      {path:'archive', component:GetArchiveComponent},
-      {path:'trash', component:GetTrashComponent},    
+     { path: '', redirectTo: 'dashboard/notes', pathMatch: 'full'},
+      { path: 'notes', component: GetAllNotesComponent },
+      { path: 'archive', component: GetArchiveComponent },
+      { path: 'trash', component: GetTrashComponent },
     ]
-  }
+  },
+
+  // {path:'notes', component:GetAllNotesComponent},
+  // {path:'trash', component:GetTrashComponent},
+  // {path:'archive', component:GetArchiveComponent},
+  // {path:'create', component:CreateNotesComponent}
 ];
 
 @NgModule({
