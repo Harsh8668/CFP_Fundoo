@@ -3,16 +3,17 @@
 <div class="container">
 
     <div class="icons">
-        <span class="material-symbols-outlined" style="cursor: pointer;">
+
+        <span class="material-symbols-outlined" style="cursor: pointer;" *ngIf="icons" matTooltip="Remind me">
             add_alert
         </span>
 
-        <span class="material-symbols-outlined" style="cursor: pointer;">
+        <span class="material-symbols-outlined" style="cursor: pointer;" *ngIf="icons" matTooltip="Collaborator">
             person_add
         </span>
 
         <button mat-button [matMenuTriggerFor]="colorMenu" class="color" class="material-symbols-outlined"
-            style="cursor: pointer;margin-left: -15px;margin-top: -8px;">
+            style="cursor: pointer;margin-left: -15px;margin-top: -8px;" *ngIf="icons" matTooltip="Background Options">
             palette
             <mat-menu #colorMenu="matMenu">
                 <div *ngFor="let color of colors">
@@ -22,15 +23,40 @@
             </mat-menu>
         </button>
 
-        <span class="material-symbols-outlined" style="cursor: pointer;margin-left: -16px;">
+        <span class="material-symbols-outlined" style="cursor: pointer;margin-left: -16px;" *ngIf="icons"
+            matTooltip="Add image">
             image
         </span>
 
-        <span class="material-symbols-outlined" (click)="archieve()" style="cursor: pointer;">
-            archive
-        </span>
+        <div *ngIf="icons">
+            <div *ngIf="Archive">
+                <span class="material-symbols-outlined" (click)="archieve()" style="cursor: pointer;"
+                    matTooltip="Archive">
+                    archive
+                </span>
+            </div>
+        </div>
 
-        <div class="material-symbols-outlined" style="cursor: pointer;">
+        <div class="Unarchive" *ngIf="UnArchive">
+            <span class="material-symbols-outlined" style="cursor: pointer;" (click)="unarchieve()"
+                matTooltip="UnArchive">
+                unarchive
+            </span>
+        </div>
+
+        <div *ngIf="trashIcons">
+            <span class="material-symbols-outlined" style="cursor: pointer; margin-left: -125px;"
+                (click)="deleteForever()" matTooltip="Delete Forever">
+                delete_forever
+            </span>
+
+            <span class="material-symbols-outlined" style="cursor: pointer; margin-left: 20px;" (click)="onrestore()"
+                matTooltip="Restore">
+                restore_from_trash
+            </span>
+        </div>
+
+        <div class="material-symbols-outlined" style="cursor: pointer;" *ngIf="icons" matTooltip="More">
             <button mat-icon-button [matMenuTriggerFor]="menu" style="margin-top:-8px">
                 <mat-icon>more_vert</mat-icon>
             </button>
@@ -42,5 +68,7 @@
                 </mat-menu>
             </div>
         </div>
+
     </div>
+
 </div>

@@ -1,6 +1,7 @@
-<div>   
-    <app-create-notes></app-create-notes>
+<div>
+    <app-create-notes (noteToRefresh)="getAllNote()"></app-create-notes>
 </div>
 <div>
-    <app-display-notes [NoteArray]="noteArray"></app-display-notes>
+    <app-display-notes [NoteArray]="noteArray" (noteToRefresh)=" getAllNote()" (trashNoteToRefresh)="trash($event)"
+        (archiveNoteAndRefresh)="archive($event)" (updateNoteToRefresh)="updateNote($event)"></app-display-notes>
 </div>

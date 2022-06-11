@@ -32,8 +32,13 @@ import { UpdateNotesComponent } from './component/update-notes/update-notes.comp
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { AuthguardserviceService } from './services/AuthGuardService/authguardservice.service';
-import { RouterModule } from '@angular/router'; 
-import {MatMenuModule} from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { LabelsComponent } from './component/labels/labels.component';
+import { FilterPipe } from './Pipe/filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +54,9 @@ import {MatMenuModule} from '@angular/material/menu';
     GetAllNotesComponent,
     GetArchiveComponent,
     GetTrashComponent,
-    UpdateNotesComponent
+    UpdateNotesComponent,
+    LabelsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -67,16 +74,33 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule,
+    MatSnackBarModule,
     MatExpansionModule,
     MatCardModule,
     FlexLayoutModule,
     MatSidenavModule,
     FormsModule,
-    RouterModule
+    MatTooltipModule,
+    RouterModule,
   ],
   providers: [
     AuthguardserviceService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    CreateNotesComponent,
+    DashboardComponent,
+    DisplayNotesComponent,
+    ForgotemailComponent,
+    ForgotpasswordComponent,
+    GetAllNotesComponent,
+    GetArchiveComponent,
+    GetTrashComponent,
+    IconsComponent,
+    LabelsComponent,
+    LoginComponent,
+    RegistrationComponent,
+    UpdateNotesComponent
+  ]
 })
 export class AppModule { }

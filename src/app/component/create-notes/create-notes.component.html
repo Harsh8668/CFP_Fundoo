@@ -29,6 +29,7 @@
 
     <div class="box3">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
             <div class="box4" *ngIf="!isValid">
                 <mat-accordion>
                     <mat-expansion-panel hideToggle style="background-color: whitesmoke;">
@@ -37,17 +38,21 @@
                                 <input type="text" class="box5" placeholder="Title" formControlName="title">
                             </mat-panel-title>
                         </mat-expansion-panel-header>
+
                         <input type="text" class="box6" placeholder="Take a note..."
                             formControlName="description"><br><br>
+
                         <button (click)="onSubmit()" class="close">
                             Close
                         </button>
+
                         <div class="icon">
                             <app-icons></app-icons>
                         </div>
                     </mat-expansion-panel>
                 </mat-accordion>
             </div>
+
         </form>
     </div>
 </div>

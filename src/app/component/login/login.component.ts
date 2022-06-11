@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/services/userService/user-service.service';
 
 @Component({
@@ -10,9 +12,12 @@ import { UserServiceService } from 'src/app/services/userService/user-service.se
 export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
-  users = '1'
 
-  constructor(private formBuilder: FormBuilder, private user: UserServiceService) { }
+  openSnackBar() {
+    this._snackBar.open;
+  }
+
+  constructor(private formBuilder: FormBuilder, private user: UserServiceService, private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -20,7 +25,6 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: "advance"
     });
-    localStorage.setItem('SessionUser',this.users);
   }
 
   get f() { return this.registerForm.controls; }
@@ -38,7 +42,9 @@ export class LoginComponent implements OnInit {
 
       this.user.login(reqdata).subscribe((response: any) => {
         console.log(response);
-        localStorage.setItem("token", response.id)
+        localStorage.setItem("token", response.id);
+        this.router.navigateByUrl("\dashboard")
+        this._snackBar.open('Login Successfully', '', { duration: 2000 });
       });
     }
   }

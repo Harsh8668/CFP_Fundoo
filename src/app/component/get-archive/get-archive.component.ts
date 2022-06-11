@@ -8,6 +8,7 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 })
 export class GetArchiveComponent implements OnInit {
   noteArchive: any
+
   constructor(private note: NoteServiceService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,9 @@ export class GetArchiveComponent implements OnInit {
       this.noteArchive = response.data.data
       this.noteArchive.reverse();
     }
-    )
+    );
+  }
+  Refresh(data: any) {
+    this.getArchiveData();    
   }
 }

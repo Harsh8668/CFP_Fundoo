@@ -1,13 +1,16 @@
 <div class="main" style="display:grid; grid-template-columns: repeat(4,1fr);">
-    <div *ngFor="let note of NoteArray">
+    <div *ngFor="let note of NoteArray  | filter: searchWord">
         <mat-card class="card" [style.background]="note.color">
-            <mat-card-title [style.background]="note.color" type="text" placeholder="Title" class="input" (click)="openDialog(note)">{{note.title}}
+            <mat-card-title [style.background]="note.color" type="text" placeholder="Title" class="input"
+                (click)="openDialog(note)">{{note.title}}
             </mat-card-title>
-            <mat-card-content [style.background]="note.color" type="text" placholder="Take a note..." class="input" (click)="openDialog(note)">
+            <mat-card-content [style.background]="note.color" type="text" placholder="Take a note..." class="input"
+                (click)="openDialog(note)">
                 {{note.description}}
             </mat-card-content>
             <div class="icon">
-                <app-icons [noteCard]="note"></app-icons>
+                <app-icons [noteCard]="note" (trashNoteToRefresh)="trash($event)"
+                    (archiveNoteAndRefresh)="archive($event)" (commonToRefresh)="refreshCommon($event)"></app-icons>
             </div>
         </mat-card>
     </div>

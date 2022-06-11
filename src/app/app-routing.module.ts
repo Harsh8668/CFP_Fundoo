@@ -12,6 +12,7 @@ import { IconsComponent } from './component/icons/icons.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { LabelsComponent } from './component/labels/labels.component';
 
 const routes: Routes = [
   // {path:'', redirectTo:"login", pathMatch: 'full'},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard],
     children: [
-     { path: '', redirectTo: 'dashboard/notes', pathMatch: 'full'},
+      { path: '', redirectTo: 'dashboard/notes', pathMatch: 'full' },
+      { path: 'label', component: LabelsComponent },
       { path: 'notes', component: GetAllNotesComponent },
       { path: 'archive', component: GetArchiveComponent },
       { path: 'trash', component: GetTrashComponent },

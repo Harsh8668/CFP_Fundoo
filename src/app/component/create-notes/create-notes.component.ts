@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/services/noteService/note-service.service';
 
 @Component({
@@ -11,8 +12,9 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 export class CreateNotesComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
+  @Output() noteToRefresh  = new EventEmitter<any>();
 
-  constructor(private formBuilder: FormBuilder, private user: NoteServiceService) { }
+  constructor(private formBuilder: FormBuilder, private user: NoteServiceService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -27,6 +29,7 @@ export class CreateNotesComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.isValid = true;
+    this.noteToRefresh.emit()
 
     // stop here if form is invalid
     if (this.registerForm.valid) {
@@ -38,8 +41,7 @@ export class CreateNotesComponent implements OnInit {
 
       this.user.createNote(reqdata).subscribe((response: any) => {
         console.log(response);
-        
-      //  localStorage.setItem("token", response.id)
+      this._snackBar.open('Note Created', '', { duration: 2000 });
       });
     }
   }
@@ -49,4 +51,5 @@ export class CreateNotesComponent implements OnInit {
   show() {
     this.isValid = false;
   }
+
 }

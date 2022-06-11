@@ -11,7 +11,7 @@ export class NoteServiceService {
   constructor(private httpService: HttpServiceService) {
     this.token = localStorage.getItem("token")
   }
-//creation of note in create note page
+  //creation of note in create note page
   createNote(reqdata: any) {
     console.log(reqdata);
 
@@ -96,6 +96,8 @@ export class NoteServiceService {
     return this.httpService.getService('/notes/getArchiveNotesList', true, header)
   }
 
+  // Update the note from the create note page
+
   update(reqdata: any) {
 
     let header = {
@@ -108,8 +110,10 @@ export class NoteServiceService {
     return this.httpService.postService('/notes/updateNotes', reqdata, true, header)
   }
 
-  noteColor(reqdata:any){
-    
+  // Add the color to the note part in the create note page
+
+  noteColor(reqdata: any) {
+
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -118,5 +122,19 @@ export class NoteServiceService {
     }
 
     return this.httpService.postService('/notes/changesColorNotes', reqdata, true, header)
+  }
+
+  //deleting of the note permanently 
+
+  deleteForever(reqdata: any) {
+
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+
+    return this.httpService.postService('/notes/deleteForeverNotes', reqdata, true, header)
   }
 }
